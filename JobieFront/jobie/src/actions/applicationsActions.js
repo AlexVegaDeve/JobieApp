@@ -13,7 +13,7 @@ export const listApplications = ( keyword = '', pageNumber = '') => async (dispa
             }
         }
 
-        const { data } = await axios.get(`/api/applications?keyword=${keyword}&pageNumber=${pageNumber}`, config);
+        const { data } = await axios.get(`${process.env.REACT_APP_API_ENDPOINT || ''}/api/applications?keyword=${keyword}&pageNumber=${pageNumber}`, config);
 
         dispatch({
             type: 'APPLICATION_LIST_SUCCESS',
@@ -31,7 +31,7 @@ export const listApplicationDetails = ( id ) => async (dispatch) => {
     try {
         dispatch({ type: 'APPLICATION_DETAILS_REQUEST'})
 
-        const { data } = await axios.get(`/api/applications/${id}`);
+        const { data } = await axios.get(`${process.env.REACT_APP_API_ENDPOINT || ''}/api/applications/${id}`);
 
         dispatch({
             type: 'APPLICATION_DETAILS_SUCCESS',
@@ -60,7 +60,7 @@ export const updateApplication = (application) => async (dispatch, getState) => 
             }
         }
 
-        const { data } = await axios.put(`/api/applications/${application._id}`, application, config);
+        const { data } = await axios.put(`${process.env.REACT_APP_API_ENDPOINT || ''}/api/applications/${application._id}`, application, config);
 
         dispatch({ 
             type: 'APPLICATION_UPDATE_SUCCESS',
@@ -90,7 +90,7 @@ export const applicationStats = () => async (dispatch) => {
               username: user.username,
             }
         }
-        const { data } = await axios.get('/api/applications/stats', config);
+        const { data } = await axios.get(`${process.env.REACT_APP_API_ENDPOINT || ''}/api/applications/stats`, config);
 
         dispatch({
             type: 'APPLICATION_STATS_SUCCESS',

@@ -19,7 +19,7 @@ const AddApplicationPage = () => {
             }
         }
 
-        axios.post('/api/applications',{
+        axios.post(`${process.env.REACT_APP_API_ENDPOINT || ''}/api/applications`,{
             companyName: data.companyName,
             jobTitle: data.jobTitle,
             jobLocation: data.jobLocation,

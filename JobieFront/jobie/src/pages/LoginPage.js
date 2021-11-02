@@ -17,7 +17,7 @@ const LoginPage = () => {
     const onSubmit = async (payload) => {
         // eslint-disable-next-line
         const res = await axios.post(
-            '/api/users/login', 
+            `${process.env.REACT_APP_API_ENDPOINT || ''}/api/users/login`, 
             {
             username: payload.username,
             password: payload.password}, 

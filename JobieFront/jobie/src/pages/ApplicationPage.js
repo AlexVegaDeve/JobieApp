@@ -26,7 +26,7 @@ const ApplicationPage = ({ match }) => {
     }, [match, dispatch])
 
     const handleDelete = () => {
-        axios.delete(`/api/applications/${id}`);
+        axios.delete(`${process.env.REACT_APP_API_ENDPOINT || ''}/api/applications/${id}`);
         history.push('/');
     }
 
