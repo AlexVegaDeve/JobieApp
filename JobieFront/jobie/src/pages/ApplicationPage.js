@@ -38,9 +38,9 @@ const ApplicationPage = ({ match }) => {
         <Container  >
             <h1 className="mt-5">Application Details</h1>            
             <Row>
-                <Col md={3}><Link className='btn btn-light my-3' to='/'>Back to all applications</Link></Col>
-                <Col md={3}><Button className='btn btn-light my-3' onClick={handleShow}>Delete Application</Button></Col>
-                <Col md={3}><Button className='btn btn-light my-3' onClick={handleEdit}>Edit Application</Button></Col>
+                <Col md={3}><Link className='btn btn-light my-3 ps-0' to='/'>Back to all applications</Link></Col>
+                <Col md={3}><Button className='btn btn-light my-3 ps-0' onClick={handleShow}>Delete Application</Button></Col>
+                <Col md={3}><Button className='btn btn-light my-3 ps-0' onClick={handleEdit}>Edit Application</Button></Col>
             </Row>
             <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
 

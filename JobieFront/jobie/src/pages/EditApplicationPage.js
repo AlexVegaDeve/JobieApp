@@ -27,7 +27,7 @@ const EditApplicationPage = ({ match }) => {
     useEffect(() => {
         if(successEdit) {
             dispatch({ type: 'APPLICATION_UPDATE_SUCCESS'});
-            history.push(`${process.env.REACT_APP_API_ENDPOINT || ''}/application/${id}`);
+            history.push(`/application/${id}`);
             window.location.reload()
         } else {        
             if(!application.companyName || application._id !== id){

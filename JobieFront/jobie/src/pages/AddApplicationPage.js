@@ -30,7 +30,12 @@ const AddApplicationPage = () => {
             console.log(error)
         })
         history.push('/');
-}
+    }
+    
+    function handleRedirect() {
+        history.push('/');
+    }
+    
     return(
         <Container className="py-5">
             <Card sm={12} md={6} lg={4}>
@@ -63,7 +68,7 @@ const AddApplicationPage = () => {
                         </Form.Group>
 
                         <Button type="submit">Add Application</Button>   
-                        <Button className="mx-3"><Link to='/'>Back to all applications</Link></Button>             
+                        <Button className="mx-3" onClick={handleRedirect}>Back to all applications</Button>             
                     </Form>
                     
   

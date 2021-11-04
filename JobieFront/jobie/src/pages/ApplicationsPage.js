@@ -9,7 +9,7 @@ import Message from '../components/Message';
 import Paginate from '../components/Paginate';
 import SearchBar from '../components/SearchBar';
 
-const ApplicationsPage = ({ match }) => {
+const ApplicationsPage = ({ match, history }) => {
     const keyword = match.params.keyword;
     const pageNumber = match.params.pageNumber || 1;
 
@@ -24,6 +24,9 @@ const ApplicationsPage = ({ match }) => {
         dispatch(listApplications(keyword, pageNumber))
     }, [dispatch, keyword, pageNumber])
 
+    function handleAddApp(){
+        history.push('/addApplication')
+    }
     return (
         <Container  >
             {user &&
@@ -31,7 +34,7 @@ const ApplicationsPage = ({ match }) => {
                 <h1 className="mt-5">All Applications</h1>
                 <SearchBar />
                 <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''}/>
-                <Col md={3}><Button className='btn btn-light my-3 px-0'><Link to='/addApplications'><h3 className="link">Add Application</h3></Link></Button></Col>
+                <Col md={3}><Button className='btn btn-primary my-3' onClick={handleAddApp}>Add Application</Button></Col>
                 </>
             }       
             <Row>

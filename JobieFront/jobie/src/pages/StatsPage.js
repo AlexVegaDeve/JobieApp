@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { applicationStats } from '../actions/applicationsActions';
 import { Doughnut } from 'react-chartjs-2';
-import { Container } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
@@ -56,19 +56,23 @@ const StatsPage = () => {
     }, [dispatch]);
 
     return (
-    <Container>
-        { loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
-        <>
-        <div className='header mt-5'>
-          <h1 className='title'>All applications</h1>
-          <h3>Total Apps: {totalApps} </h3>
-        </div>
-        <Container >
-            <Doughnut data={chartData} />   
-        </Container>
-        
-        </>
-      )}
+    <Container className="my-5 px-3 pb-5">
+            { loading || !statsData ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
+            <>
+            <div className='header mt-5'>
+                <h1 className='title'>All applications</h1>
+                <h3>Total Apps: {totalApps} </h3>
+            </div>
+            <div >
+                <Doughnut 
+                    data={chartData} 	
+                    width={600}
+                    height={600}
+                    options={{ maintainAspectRatio: false }}
+                />  	          
+            </div>
+            </>
+        )}
     </Container>
     )
 }

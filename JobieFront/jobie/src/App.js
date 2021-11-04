@@ -29,7 +29,7 @@ const AppRouter = ()=> {
                     <Switch>
                         <Route path="/login" component={LoginPage} exact/>
                         <Route path="/register" component={RegisterPage} exact/>
-                        <Route path="/addApplications" component={AddApplicationPage} exact/>
+                        <Route path="/addApplication" component={AddApplicationPage} exact/>
                         <Route path="/editApplication/:id" component={EditApplicationPage} exact/>
                         <Route path="/application/:id" component={ApplicationPage}/>
                         <Route path="/" component={ApplicationsPage} exact/>
