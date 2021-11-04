@@ -26,11 +26,14 @@ const ApplicationsPage = ({ match }) => {
 
     return (
         <Container  >
-            <h1 className="mt-5">All Applications</h1>
-            <SearchBar />
-            <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''}/>
-            <Col md={3}><Button className='btn btn-light my-3'><Link to='/addApplications'><h3 className="link">Add Application</h3></Link></Button></Col>
-            
+            {user &&
+                <>
+                <h1 className="mt-5">All Applications</h1>
+                <SearchBar />
+                <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''}/>
+                <Col md={3}><Button className='btn btn-light my-3 px-0'><Link to='/addApplications'><h3 className="link">Add Application</h3></Link></Button></Col>
+                </>
+            }       
             <Row>
             {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
                 <Container>
@@ -40,7 +43,7 @@ const ApplicationsPage = ({ match }) => {
                         </Col>
                     )) :
                     <>
-                        <h2>Login to view application</h2>
+                        <h2 className="mt-5">Login to view and add applications</h2>
                         <Link to='/login'>Login</Link>
                     </>
                     }

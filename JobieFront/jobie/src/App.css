@@ -24,6 +24,20 @@
   transform: scale(1.05);
 }
 
+.navbar-gradient {
+  background-image: radial-gradient( farthest-corner at 0px 0px, #2c92cc 0%, #64e4a4 100%);
+}
+
+h1, h2, h3, h4 {
+  color: #195e86
+}
+
+.navbar {
+  border-bottom: 3px solid #195e86;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

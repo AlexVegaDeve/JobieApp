@@ -22,8 +22,8 @@ const NavBar = () => {
     // console.log(userSession);
 
         return(
-            <div className="nav-cont py-3">
-                <Navbar bg="light" expand="lg" fixed="top" className="my6" expanded={expanded} style={{ paddingBottom: 0 }}>
+            <div className="nav-cont">
+                <Navbar expand="lg" fixed="top" className="my6 navbar-gradient" expanded={expanded}>
                 <Container>                   
                     <NavLink className="navbar-brand" to="/" onClick={() => setExpanded(false)}> Appie </NavLink>                                        
                     <Navbar.Toggle aria-controls="basic-navbar-nav"  onClick={() => setExpanded(expanded ? false : "expanded")}/>

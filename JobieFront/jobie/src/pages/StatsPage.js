@@ -59,11 +59,14 @@ const StatsPage = () => {
     <Container>
         { loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
         <>
-        <div className='header'>
+        <div className='header mt-5'>
           <h1 className='title'>All applications</h1>
           <h3>Total Apps: {totalApps} </h3>
         </div>
-        <Doughnut data={chartData} />
+        <Container >
+            <Doughnut data={chartData} />   
+        </Container>
+        
         </>
       )}
     </Container>
